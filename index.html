@@ -1,12 +1,145 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>
-    TryUiza
-  </title>
+  <title>TryUiza</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+  <script src="javascripts/main.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <h1>
-    TryUiza
-  </h1>
+  <div class="sidenav">
+    <a href="#video">Video</a>
+    <a href="#category">Category</a>
+    <a href="#storage">Storage</a>
+    <a href="#storage">Live Streaming</a>
+    <a href="#callback">Callback</a>
+    <a href="#analytic">Analytic</a>
+  </div>
+
+  <div class="main">
+    <div class="main-content">
+      <h2>Try UIZA</h2>
+
+      <div class="row">
+        <h2>Video</h2>
+        <p>These below APIs used to take action with your media files (we called Entity)</p>
+
+        <div class="col-md-6">
+          <h3>Create entity</h3>
+          <p>Create entity using full URL. Direct HTTP, FTP or AWS S3 link are acceptable.</p>
+
+          <p><b>Header Request</b></p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Header</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Authorization</td>
+                <td>string</td>
+                <td>Token get from API Get API key</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><b>Body Request</b></p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>Name of entity</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td>text</td>
+                <td>Full URL of media file (direct public HTTP/HTTPS, FTP, AWS S3 acceptable). Send empty string in case of integration using SDK upload to AWS</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>inputType</td>
+                <td>enum</td>
+                <td>Type of URL (Allowed value: [ http, s3, ftp, s3-uiza ] ). In case url is empty string, this must be s3-uiza</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><b>Response Parameters</b></p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td>string</td>
+                <td>Identifier of entity has been created</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="form-group">
+              <label for="js-output">Output</label>
+              <textarea class="form-control" rows="5" id="js-output"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="js-editor">Editor</label>
+              <textarea class="form-control" rows="10" id="js-editor"></textarea>
+            </div>
+            <button class="btn btn-primary js-btn-run">Run</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>Category</h2>
+      </div>
+
+      <div class="row">
+        <h2>Storage</h2>
+      </div>
+
+      <div class="row">
+        <h2>Live Streaming</h2>
+      </div>
+
+      <div class="row">
+        <h2>Callback</h2>
+      </div>
+
+      <div class="row">
+        <h2>Analytic</h2>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
