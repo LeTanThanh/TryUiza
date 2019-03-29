@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="sidenav">
-    <a href="#video">Video</a>
+    <a href="#video">Entity</a>
     <a href="#category">Category</a>
     <a href="#storage">Storage</a>
     <a href="#storage">Live Streaming</a>
@@ -22,80 +22,42 @@
 
   <div class="main">
     <div class="main-content">
-      <h2>Try UIZA</h2>
-
       <div class="row">
         <h2>Video</h2>
 
         <div class="col-md-6">
-          <h3>Example Code</h3>
+          <h3>Create Entity</h3>
 
           <table class="table">
             <thead>
               <tr>
-                <th>Function</th>
-                <th>Example Code</th>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Required</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Create entity</td>
                 <td>
-<pre>
-Uiza.workspace_api_domain = "apiwrapper.uiza.co"
-Uiza.authorization = "uap-a2aaa7b2aea746ec89e67ad2f8f9ebbf-fdf5bdca"
-
-params = {
-  "name": "Sample Video",
-  "url": "https://example.com/video.mp4",
-  "inputType": "http"
-}
-
-emtity = Uiza::Entity.create params
-</pre>
                 </td>
-              </tr>
-
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
               <tr>
-                <td>Retrieve an entity</td>
-                <td>
-<pre>
-Uiza.workspace_api_domain = "apiwrapper.uiza.co"
-Uiza.authorization = "uap-a2aaa7b2aea746ec89e67ad2f8f9ebbf-fdf5bdca"
-
-entity = Uiza::Entity.retrieve "dd28dcfa-dabd-4499-a23d-c94caf1eb994"
-</pre>
-                </td>
-              </tr>
-
               <tr>
-                <td>List all entities</td>
                 <td>
-<pre>
-Uiza.workspace_api_domain = "apiwrapper.uiza.co"
-Uiza.authorization = "uap-a2aaa7b2aea746ec89e67ad2f8f9ebbf-fdf5bdca"
-
-entities = Uiza::Entity.list
-</pre>
                 </td>
-              </tr>
-
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
               <tr>
-                <td>Update an entity</td>
-                <td>
-<pre>
-Uiza.workspace_api_domain = "apiwrapper.uiza.co"
-Uiza.authorization = "uap-a2aaa7b2aea746ec89e67ad2f8f9ebbf-fdf5bdca"
-
-params = {
-  "id": "dd28dcfa-dabd-4499-a23d-c94caf1eb994",
-  "name": "Sample Video Updated"
-}
-
-entities = Uiza::Entity.update params
-</pre>
-                </td>
-              </tr>
             </tbody>
           </table>
 
@@ -111,11 +73,34 @@ entities = Uiza::Entity.update params
           <div class="row">
             <div class="form-group">
               <label for="js-editor">Editor</label>
-              <textarea class="form-control" rows="10" id="js-editor">
-Uiza.workspace_api_domain = "apiwrapper.uiza.co"
-Uiza.authorization = "uap-a2aaa7b2aea746ec89e67ad2f8f9ebbf-fdf5bdca"
+              <textarea class="form-control" rows="28" id="js-editor">
+Uiza.app_id = "846fbb149fe74011bcaef490743d2f0f"
+Uiza.authorization = "uap-846fbb149fe74011bcaef490743d2f0f-19ce4965"
 
-Uiza::Entity.list.first
+params = {
+  name: "The Evolution of Dance",
+  url: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_10mb.mp4",
+  inputType: "http",
+  description: "Judson Laipply did a fantastic job in performing various dance moves",
+  shortDescription: "How good a dancer can you be?",
+  poster: "https://sample-videos.com/img/Sample-jpg-image-200kb.jpg",
+  thumbnail: "https://sample-videos.com/img/Sample-jpg-image-200kb.jpg",
+  extendMetadata: {
+    movie_category: "action",
+    imdb_score: 8.8,
+    published_year: "2018"
+  },
+  embedMetadata: {
+    artist: "John Doe",
+    album: "Album sample",
+    genre: "Pop"
+  },
+  metadataIds: [
+  	"3217b908-15ec-4ed7-a30d-f1072f1ebef6", "2ac7e44c-1c25-42f0-aeb8-3d7e57172a1e"
+  ]
+}
+
+entity = Uiza::Entity.create params
               </textarea>
             </div>
             <button class="btn btn-primary js-btn-run">Run</button>
@@ -125,26 +110,6 @@ Uiza::Entity.list.first
 
           </div>
         </div>
-      </div>
-
-      <div class="row">
-        <h2>Category</h2>
-      </div>
-
-      <div class="row">
-        <h2>Storage</h2>
-      </div>
-
-      <div class="row">
-        <h2>Live Streaming</h2>
-      </div>
-
-      <div class="row">
-        <h2>Callback</h2>
-      </div>
-
-      <div class="row">
-        <h2>Analytic</h2>
       </div>
     </div>
   </div>

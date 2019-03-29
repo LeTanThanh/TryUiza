@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('.js-btn-run').on('click', function() {
     var code = $('#js-editor').val();
     var ajaxURL = "https://ltt-try-uiza-ruby.herokuapp.com/api/v1/try_uiza"
+    $('#js-output').val('Loading ...');
 
     $.ajax({
       url: ajaxURL,
